@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>AngularJS -- Demo Source</title>
+</head>
+<body ng-app="code.demo">
+    <div class="container" ng-controller="CodeController">
+        <div class="row">
+            <div class="col-md-12">
+               <table class="table">
+                <thead>
+                    <tr>
+                        <th>Total Tasks</th>
+                        <th>To Do</th>
+                        <th>In Progress</th>
+                        <th>Completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{total_tasks}}</td>
+                        <td>{{to_do}}</td>
+                        <td>{{in_progress}}</td>
+                        <td>{{completed}}</td>
+                    </tr>
+                </tbody>
+               </table>
+            </div>
+        </div>
+
+        <!--Display projects-->
+        <div class="row">
+            <div ng-repeat="project in projects" class="col-md-4" style="margin-top: 15px">
+            <p>ID: {{project.id}}</p>
+            <p>Name: {{project.name}}</p>
+            <p>Status: {{project.status}}</p>
+        </div>
+        </div>
+
+        <!--Add new project-->
+        <hr>
+                <div class="row">
+                    <div class="col-md-6" style="margin: 0 auto">
+                    <h3>Add new project</h3>  
+                    <form>
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" ng-model="projectName" class="form-controll">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Status</label>
+                            <select type="text" ng-model="projectStatus" class="form-controll"></select>
+                        </div>
+                    </form> 
+
+                    </div>
+                
+                
+            </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="logic/project.js"></script>
+</body>
+</html>
