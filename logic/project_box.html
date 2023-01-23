@@ -1,0 +1,23 @@
+<div ng-hide="editRow">
+    <p><span style="font-weight: bold">ProjectID:</span> {{project.id}} </p>
+    <p><span style="font-weight: bold">Name:</span> {{project.name}}</p>
+    <p><span style="font-weight: bold">Status:</span> {{project.status}}</p>
+    <button class="btn btn-danger" ng-click="delete()">Delete</button>
+    <button class="btn btn-primary" ng-click="editRow=1">Edit</button>
+</div>
+
+<div ng-show=editRow>
+    <div class="form-group">
+        <label for="">Project Name</label>
+        <input type="text" class="form-control" ng-model="project.name">
+
+        <label for="">Status</label>
+        <select name="" id="" ng-model="project.status" class="form-control"
+            ng-options="item as item for item in $parent.status_choices"
+            ng-change="$parent.update_totals()">
+
+        </select>
+        <br>
+        <button class="btn btn-success" ng-click="editRow=0">Close</button>
+    </div>
+</div> 
